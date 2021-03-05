@@ -1,13 +1,13 @@
 require 'twitter_client'
 
 def load_mentions
-  mentions = File.readlines('/Users/shinyarie/documents/work/ruby_bot/mentionlist.txt')
+  mentions = File.readlines('/Users/shinyarie/documents/work/twitter_bot/mentionlist.txt')
   mentions.map! {|e| e.chomp }
   return mentions
 end
 
 def save_mentions(mentions)
-  File.open('/Users/shinyarie/documents/work/ruby_bot/mentionlist.txt', 'w') {|f|
+  File.open('/Users/shinyarie/documents/work/twitter_bot/mentionlist.txt', 'w') {|f|
     mentions.each do |e|
       f.write "#{e}\n"
     end
