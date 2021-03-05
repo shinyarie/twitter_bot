@@ -22,5 +22,6 @@ client.mentions_timeline.each do |tweet|
     client.update("@#{tweet.user.screen_name}\nうざ", options = {:in_reply_to_status_id => tweet.id})
     mentions.push tweet.id
     save_mentions(mentions)
+    client.favorite(tweet.id)
   end
 end
